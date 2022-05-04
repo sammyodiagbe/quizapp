@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
               'Let\'s play',
               style: Theme.of(context).textTheme.headline1,
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 1),
             Text(
               'Be the First!',
               style: Theme.of(context).textTheme.headline5,
