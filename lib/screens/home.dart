@@ -9,14 +9,21 @@ class Home extends StatelessWidget {
     return Scaffold(
         body: SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.only(top: size),
+        padding: EdgeInsets.all(size),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20),
             Text(
               'Let\'s play',
               style: Theme.of(context).textTheme.headline1,
             ),
+            SizedBox(height: 10),
+            Text(
+              'Be the First!',
+              style: Theme.of(context).textTheme.headline5,
+            )
           ],
         ),
       ),

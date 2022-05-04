@@ -21,6 +21,9 @@ class QuizApp extends StatelessWidget {
               fontSize: 35,
               fontWeight: FontWeight.bold,
             ),
+            headline5: TextStyle(
+              fontSize: 16,
+            ),
           ),
           colorScheme: const ColorScheme(
             primary: Color.fromRGBO(209, 40, 40, 1),
