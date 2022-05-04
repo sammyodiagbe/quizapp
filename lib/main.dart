@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quizapp/screens/home.dart';
 
 void main() {
@@ -12,11 +13,12 @@ class QuizApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          textTheme: const TextTheme(
+          textTheme: GoogleFonts.epilogueTextTheme(textTheme).copyWith(
             headline1: TextStyle(
               fontSize: 35,
               fontWeight: FontWeight.bold,
