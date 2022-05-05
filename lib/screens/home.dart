@@ -12,110 +12,123 @@ class Home extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Scaffold(
-          // appBar: AppBar(actions: [
-          //   IconButton(
-          //     onPressed: null,
-          //     icon: Icon(Icons.person),
-          //   )
-          // ]),
-
+          appBar: AppBar(
+            elevation: 0,
+            actions: [
+              TextButton(
+                onPressed: null,
+                child: Icon(
+                  Icons.person,
+                  color: Colors.indigo,
+                ),
+                style: TextButton.styleFrom(
+                  shape: CircleBorder(
+                      side: BorderSide(color: Colors.red, width: 1.0)),
+                  padding: EdgeInsets.all(5),
+                ),
+              ),
+              IconButton(
+                  onPressed: null,
+                  icon: Icon(Icons.favorite, color: Colors.indigo))
+            ],
+          ),
           body: Container(
-        child: Stack(
-          children: [
-            Container(
-              height: barHeight,
-              width: width,
-              padding: EdgeInsets.symmetric(horizontal: size, vertical: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.person,
-                      color: Colors.blue,
-                    ),
-                    style: TextButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18),
-                        side: BorderSide(color: Color(0xfffff), width: 1),
-                      ),
-                    ),
+            child: Stack(
+              children: [
+                // Container(
+                //   height: barHeight,
+                //   width: width,
+                //   padding: EdgeInsets.symmetric(horizontal: size, vertical: 15),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     crossAxisAlignment: CrossAxisAlignment.center,
+                //     children: [
+                //       TextButton(
+                //         onPressed: () {},
+                //         child: Icon(
+                //           Icons.person,
+                //           color: Colors.blue,
+                //         ),
+                //         style: TextButton.styleFrom(
+                //           shape: RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.circular(18),
+                //             side: BorderSide(color: Color(0xfffff), width: 1),
+                //           ),
+                //         ),
+                //       ),
+                //       SizedBox(width: 5),
+                //       TextButton(
+                //         onPressed: () {},
+                //         child: Icon(
+                //           Icons.favorite,
+                //           color: Colors.blue,
+                //         ),
+                //         style: TextButton.styleFrom(
+                //           backgroundColor: Colors.red,
+                //           shape: RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.circular(18),
+                //             side: BorderSide(color: Color(0xfffff), width: 1),
+                //           ),
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                SingleChildScrollView(
+                  padding: EdgeInsets.only(
+                    top: 0,
+                    left: size,
+                    right: size,
+                    bottom: size,
                   ),
-                  SizedBox(width: 5),
-                  TextButton(
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.favorite,
-                      color: Colors.blue,
-                    ),
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18),
-                        side: BorderSide(color: Color(0xfffff), width: 1),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SingleChildScrollView(
-              padding: EdgeInsets.only(
-                top: size + 20,
-                left: size,
-                right: size,
-                bottom: size,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 20),
-                  Text(
-                    'Let\'s play',
-                    style: Theme.of(context).textTheme.headline1,
-                  ),
-                  SizedBox(height: 1),
-                  Text(
-                    'Be the First!',
-                    style: Theme.of(context).textTheme.headline5,
-                  ),
-                  SizedBox(height: 80),
-                  Column(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      GameLevelCard(
-                        icon: Icons.check,
-                        level: 1,
-                        title: 'Travel newbie',
-                        containerColor: 0xffcc49b0,
-                        imagePath: 'assets/images/books.svg',
+                      SizedBox(height: 20),
+                      Text(
+                        'Let\'s play',
+                        style: Theme.of(context).textTheme.headline1,
                       ),
-                      SizedBox(height: 100),
-                      GameLevelCard(
-                        icon: Icons.play_circle_fill,
-                        level: 2,
-                        title: 'Continuing',
-                        containerColor: 0xff6168e1,
-                        imagePath: 'assets/images/Balloon3.svg',
+                      SizedBox(height: 1),
+                      Text(
+                        'Be the First!',
+                        style: Theme.of(context).textTheme.headline5,
                       ),
-                      SizedBox(height: 100),
-                      GameLevelCard(
-                        icon: Icons.lock,
-                        level: 3,
-                        title: 'Experienced',
-                        containerColor: 0xffa485cc,
-                        imagePath: 'assets/images/cargo_ship.svg',
+                      SizedBox(height: 80),
+                      Column(
+                        children: [
+                          GameLevelCard(
+                            icon: Icons.check,
+                            level: 1,
+                            title: 'Travel newbie',
+                            containerColor: 0xffcc49b0,
+                            imagePath: 'assets/images/books.svg',
+                          ),
+                          SizedBox(height: 100),
+                          GameLevelCard(
+                            icon: Icons.play_circle_fill,
+                            level: 2,
+                            title: 'Continuing',
+                            containerColor: 0xff6168e1,
+                            imagePath: 'assets/images/Balloon3.svg',
+                          ),
+                          SizedBox(height: 100),
+                          GameLevelCard(
+                            icon: Icons.lock,
+                            level: 3,
+                            title: 'Experienced',
+                            containerColor: 0xffa485cc,
+                            imagePath: 'assets/images/cargo_ship.svg',
+                          )
+                        ],
                       )
                     ],
-                  )
-                ],
-              ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      )),
+          )),
     );
   }
 }
