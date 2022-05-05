@@ -24,6 +24,10 @@ class QuizApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Colors.redAccent,
             ),
+            headline3: TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+            ),
             headline5: TextStyle(
               fontSize: 16,
             ),
