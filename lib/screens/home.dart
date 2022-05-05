@@ -22,8 +22,52 @@ class Home extends StatelessWidget {
           body: Container(
         child: Stack(
           children: [
+            Container(
+              height: barHeight,
+              width: width,
+              padding: EdgeInsets.symmetric(horizontal: size, vertical: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.blue,
+                    ),
+                    style: TextButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                        side: BorderSide(color: Color(0xfffff), width: 1),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  TextButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.blue,
+                    ),
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                        side: BorderSide(color: Color(0xfffff), width: 1),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SingleChildScrollView(
-              padding: EdgeInsets.only(top: size + 20, left: size, right: size),
+              padding: EdgeInsets.only(
+                top: size + 20,
+                left: size,
+                right: size,
+                bottom: size,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,45 +111,6 @@ class Home extends StatelessWidget {
                     ],
                   )
                 ],
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Container(
-                height: barHeight,
-                width: width,
-                padding: EdgeInsets.symmetric(horizontal: size, vertical: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      height: 50,
-                      width: 50,
-                      child: Center(
-                        child: IconButton(
-                          icon: Icon(Icons.person),
-                          color: Colors.blueAccent,
-                          onPressed: null,
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Color(0xffeee),
-                        ),
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.red,
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.person),
-                      color: Colors.blueAccent,
-                      onPressed: null,
-                    ),
-                  ],
-                ),
               ),
             ),
           ],
