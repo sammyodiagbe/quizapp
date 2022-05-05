@@ -18,7 +18,7 @@ class QuizApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.latoTextTheme(textTheme).copyWith(
+        textTheme: GoogleFonts.pacificoTextTheme(textTheme).copyWith(
           headline1: TextStyle(
             fontSize: 35,
             fontWeight: FontWeight.bold,

@@ -8,62 +8,110 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).padding.top;
     final width = MediaQuery.of(context).size.width;
-    return Scaffold(
-        // appBar: AppBar(actions: [
-        //   IconButton(
-        //     onPressed: null,
-        //     icon: Icon(Icons.person),
-        //   )
-        // ]),
-        body: SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.all(size),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+    final double barHeight = 60;
+    return SafeArea(
+      bottom: false,
+      child: Scaffold(
+          // appBar: AppBar(actions: [
+          //   IconButton(
+          //     onPressed: null,
+          //     icon: Icon(Icons.person),
+          //   )
+          // ]),
+
+          body: Container(
+        child: Stack(
           children: [
-            SizedBox(height: 20),
-            Text(
-              'Let\'s play',
-              style: Theme.of(context).textTheme.headline1,
+            SingleChildScrollView(
+              padding: EdgeInsets.only(top: size + 20, left: size, right: size),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 20),
+                  Text(
+                    'Let\'s play',
+                    style: Theme.of(context).textTheme.headline1,
+                  ),
+                  SizedBox(height: 1),
+                  Text(
+                    'Be the First!',
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                  SizedBox(height: 80),
+                  Column(
+                    children: [
+                      GameLevelCard(
+                        icon: Icons.check,
+                        level: 1,
+                        title: 'Travel newbie',
+                        containerColor: 0xffcc49b0,
+                        imagePath: 'assets/images/books.svg',
+                      ),
+                      SizedBox(height: 100),
+                      GameLevelCard(
+                        icon: Icons.play_circle_fill,
+                        level: 2,
+                        title: 'Continuing',
+                        containerColor: 0xff6168e1,
+                        imagePath: 'assets/images/Balloon3.svg',
+                      ),
+                      SizedBox(height: 100),
+                      GameLevelCard(
+                        icon: Icons.lock,
+                        level: 3,
+                        title: 'Experienced',
+                        containerColor: 0xffa485cc,
+                        imagePath: 'assets/images/cargo_ship.svg',
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
-            SizedBox(height: 1),
-            Text(
-              'Be the First!',
-              style: Theme.of(context).textTheme.headline5,
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Container(
+                height: barHeight,
+                width: width,
+                padding: EdgeInsets.symmetric(horizontal: size, vertical: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      height: 50,
+                      width: 50,
+                      child: Center(
+                        child: IconButton(
+                          icon: Icon(Icons.person),
+                          color: Colors.blueAccent,
+                          onPressed: null,
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Color(0xffeee),
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.red,
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.person),
+                      color: Colors.blueAccent,
+                      onPressed: null,
+                    ),
+                  ],
+                ),
+              ),
             ),
-            SizedBox(height: 80),
-            Column(
-              children: [
-                GameLevelCard(
-                  icon: Icons.check,
-                  level: 1,
-                  title: 'Travel newbie',
-                  containerColor: 0xffcc49b0,
-                  imagePath: 'assets/images/cargo_ship.svg',
-                ),
-                SizedBox(height: 100),
-                GameLevelCard(
-                  icon: Icons.play_circle_fill,
-                  level: 2,
-                  title: 'Continuing',
-                  containerColor: 0xff6168e1,
-                  imagePath: 'assets/images/Balloon3.svg',
-                ),
-                SizedBox(height: 100),
-                GameLevelCard(
-                  icon: Icons.lock,
-                  level: 3,
-                  title: 'Experienced',
-                  containerColor: 0xffa485cc,
-                  imagePath: 'assets/images/cargo_ship.svg',
-                )
-              ],
-            )
           ],
         ),
-      ),
-    ));
+      )),
+    );
   }
 }
 
