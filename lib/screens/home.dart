@@ -23,7 +23,8 @@ class Home extends StatelessWidget {
                 ),
                 style: TextButton.styleFrom(
                   shape: CircleBorder(
-                      side: BorderSide(color: Colors.red, width: 1.0)),
+                    side: BorderSide(color: Colors.red, width: 1.0),
+                  ),
                   padding: EdgeInsets.all(5),
                 ),
               ),
